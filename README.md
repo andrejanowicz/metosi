@@ -1,6 +1,6 @@
 # About
 
-Metosi is single header library implementing basic functionality of <b>Me</b>ttler <b>To</b>ledos <b>SI</b>CS protocol, written in C.
+Metosi is single header C library implementing basic features of <b>Me</b>ttler <b>To</b>ledos <b>SI</b>CS protocol.
 Many Mettler Toledo scales provide an UART interface for control and measure purposes. With metosi you can easily interact with your scale.
 Metosi is a private project and not affiliated with Mettler Toledo. Metosi is provided as is. I do not take responsibility for any damage that might happen as a result of using this code.
 
