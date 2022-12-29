@@ -16,13 +16,13 @@ I do not take responsibility for any damage that might happen as a result of usi
 <b>Attention:</b> You might need to use a logic-level shifter to connect scale and µC. 
  A minimal setup consists of a voltage divider between scales Tx and µC Rx.
 
-include metosi.h 
+1. #include "metosi.h"
 
-Implement the following helper method needed by metosi to communicate, char per char, with the scale:
+2. Implement the following helper method needed by metosi to communicate, char per char, with the scale:
 
 -  `void metosi_send_char(const char* msg)`
 
-The following callback execute when metosi receives a response including meaurement, tare, zero, serialnumber or busy information:
+3. provide the following callbacks to run when metosi receives a response including meaurement, tare, zero, serialnumber or busy information:
 
 - `void metosi_measurement_cb(uint8_t rv, float weight, char* unit)`
 - `void metosi_tare_cb(int rv)`
