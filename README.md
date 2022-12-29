@@ -54,9 +54,9 @@ example of how to request a single measurement:
 - call `scale_cmd(SCALE_MEASURE_CMD);`
 - wait for scale to reply with measurement and metosi to execute  `metosi_measurement_cb(uint8_t rv, float weight, char* unit)`
 
-The scale might not be able to handle multiple querys one after the other. Always wait for a certain amount of milliseconds or (better) await response before sending the next command.
+The scale might not be able to handle multiple querys one after the other. Always wait for a certain amount of milliseconds or (better) await response before sending next command.
 
-## Extra
+## Special commands
 `scale_display(const char* text)` print text to the scales screen. 
 
 <img src="https://raw.githubusercontent.com/andrejanowicz/metosi/main/hello.jpg" width="640"></br><br>
