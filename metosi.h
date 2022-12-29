@@ -76,10 +76,6 @@ void(*metosi_serialnumber_cb)(uint32_t) = NULL;
 void(*metosi_scale_busy_cb)(void) = NULL;
 
 
-// scale reports syntax error
-void(*metosi_syntax_cb)(void) = NULL;
-
-
 enum scale_errors{
   SCALE_FINE_E,       // scale is doing well
   SCALE_HIGH_E,       // weight is to high
@@ -120,7 +116,7 @@ void scale_cmd(char* cmd){
 }
 
 // write string to scale display
-void scale_display(const char * text){
+void scale_display(const char* text){
   
   const uint8_t MAX_LENGTH = 16;
   char message[MAX_LENGTH] = "D \"";
@@ -238,7 +234,7 @@ void metosi_read(char c) {
       }
 
       // terminate with 0 byte
-      unit[j+1] = '\0';//0x00;
+      unit[j+1] = '\0';
 
       // return values to callback function
       metosi_measurement_cb(SCALE_FINE_E, measurement, unit);
