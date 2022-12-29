@@ -1,13 +1,13 @@
 #include "metosi.h"
 
-// helper method to send a single character to scale
-void send_char(const char * msg){
+// provide a method to send a single char to scale
+void send_char(const char* msg){
   if(msg == NULL) return;
   Serial2.print(msg[0]);
 }
 
 
-// callback to receive measurement
+// receive measurement
 void rcv_measurement(uint8_t rv, float weight, char* unit) {
   switch(rv){
     case SCALE_FINE_E:
@@ -31,7 +31,7 @@ void rcv_measurement(uint8_t rv, float weight, char* unit) {
   }
 }
 
-// callback to receive tare response
+// receive tare response
 void rcv_tare(int rv) {
   switch(rv){
     case SCALE_FINE_E:
@@ -54,7 +54,7 @@ void rcv_tare(int rv) {
 }
 
 
-// callback to receive zero response
+// receive zero response
 void rcv_zero(int rv) {
   switch(rv){
     case SCALE_FINE_E:
@@ -76,14 +76,14 @@ void rcv_zero(int rv) {
     }
 }
 
-// callback to receive serialnumber
+// receive serialnumber
 void rcv_serialnumber(uint32_t SN) {
   Serial.print("scale SN:\t");
   Serial.println(SN);
 }
 
 
-// callback when scale reports busy
+// receive when scale reports busy
 void rcv_busy(){
   Serial.println("Scale reports busy/off");
 }
@@ -109,7 +109,7 @@ void setup() {
 
 
   // after UART initilization, first byte sent shows framing error.
-  // This is a workaround, to resync with scale.
+  // send two commands to sync with scale
   scale_cmd(SCALE_RESET_CMD);
   delay(100);
   scale_cmd(SCALE_RESET_CMD);
