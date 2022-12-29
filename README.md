@@ -4,7 +4,7 @@ Many Mettler Toledo scales provide RS232 interfaces for control and measure purp
 
 Metosi is single header C library covering basic features of <b>Me</b>ttler <b>To</b>ledos <b>SI</b>CS protocol.
 
-Metosi is easily implemented. see included hello_scale.ino example code on how to run metosi with ESP32-Arduino.
+See included hello_scale.ino example code on how to run metosi with ESP32-Arduino.
 
 Metosi is a private project and not affiliated with Mettler Toledo. Metosi is provided as is. 
 
