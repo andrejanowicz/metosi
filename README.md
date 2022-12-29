@@ -59,5 +59,8 @@ The scale might not be able to handle multiple querys one after the other. Alway
 ## Extra
 `scale_display(const char* text)` print text to the scales screen. 
 
+<img src="https://raw.githubusercontent.com/andrejanowicz/metosi/main/hello.jpg" width="640"></br><br>
+
 To switch back to standard weight display call `scale_cmd(SCALE_DISPLAY_WEIGHT_CMD);`
+
  
